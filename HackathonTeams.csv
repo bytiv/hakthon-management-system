@@ -1,0 +1,66 @@
+TeamNumber,TeamName,University,Category,Score1,Score2,Score3,Score4,Score5
+101,Cyber Titans,MIT,Cybersecurity,3,4,3,4,4
+102,AI Innovators,Stanford,Artificial Intelligence,5,4,5,4,3
+103,Web Warriors,Harvard,Web Development,4,3,4,5,4
+104,Code Breakers,Berkeley,Cybersecurity,4,4,3,5,4
+105,Neural Nets,CMU,Artificial Intelligence,5,5,4,4,5
+106,Design Masters,Yale,Web Development,3,4,4,3,5
+107,Security Squad,Princeton,Cybersecurity,4,5,4,4,3
+108,Data Wizards,Columbia,Artificial Intelligence,4,4,5,5,4
+109,Frontend Force,Cornell,Web Development,5,4,4,3,4
+110,Tech Titans,Duke,Mobile Development,4,5,5,4,4
+111,Hack Heroes,Northwestern,Cybersecurity,3,3,4,4,5
+112,Innovation Hub,Brown,Artificial Intelligence,4,5,4,5,5
+113,Pixel Perfect,Dartmouth,Web Development,5,5,3,4,4
+114,App Architects,Rice,Artificial Intelligence,3,4,4,5,4
+115,Binary Blazers,Vanderbilt,Cybersecurity,5,4,4,4,5
+116,Quantum Coders,UCLA,Artificial Intelligence,5,4,5,5,4
+117,Network Ninjas,Georgia Tech,Cybersecurity,4,4,5,3,4
+118,Script Surgeons,UT Austin,Web Development,3,5,4,4,4
+119,App Avengers,Ohio State,Mobile Development,5,4,4,5,5
+120,Matrix Makers,Purdue,Artificial Intelligence,4,3,5,4,4
+121,Firewall Force,Virginia Tech,Cybersecurity,5,5,4,4,3
+122,UI Unicorns,University of Michigan,Web Development,4,4,5,5,4
+123,Code Crusaders,University of Washington,Mobile Development,4,3,4,5,5
+124,Deep Learners,UC San Diego,Artificial Intelligence,5,5,5,4,4
+125,Security Sentinels,Johns Hopkins,Cybersecurity,4,5,5,4,4
+126,Neural Knights,NYU,Artificial Intelligence,5,4,4,5,5
+127,Cyber Sharks,Michigan State,Cybersecurity,4,4,3,5,4
+128,Web Wizards,UConn,Web Development,5,4,5,4,3
+129,App Alphas,University of Florida,Mobile Development,4,5,4,4,5
+130,Logic Lords,UC Berkeley,Artificial Intelligence,5,5,4,4,5
+131,Hack Hawks,Georgia Tech,Cybersecurity,4,3,5,4,4
+132,Frontend Falcons,Brown,Web Development,4,5,4,5,4
+133,Mobile Mavericks,University of Arizona,Mobile Development,5,4,4,5,4
+134,AI Architects,MIT,Artificial Intelligence,5,4,5,5,4
+135,Data Defenders,Stanford,Cybersecurity,4,5,4,4,5
+136,Pixel Pioneers,Dartmouth,Web Development,5,4,4,5,4
+137,App Titans,Rice,Mobile Development,4,5,5,4,4
+138,Cognitive Coders,CMU,Artificial Intelligence,5,5,4,5,4
+139,Network Ninjas II,Virginia Tech,Cybersecurity,4,4,5,4,3
+140,UI Innovators,University of Michigan,Web Development,5,4,4,5,5
+141,Mobile Monarchs,University of Washington,Mobile Development,4,5,4,4,5
+142,Deep Data,UC San Diego,Artificial Intelligence,5,4,5,4,4
+143,Cyber Knights,Johns Hopkins,Cybersecurity,4,5,5,3,4
+144,Script Sages,UCLA,Web Development,4,5,5,4,4
+145,App Legends,Ohio State,Mobile Development,5,4,4,5,5
+146,Neural Nomads,Purdue,Artificial Intelligence,4,5,4,5,4
+147,Security Sentinels II,Georgia Tech,Cybersecurity,5,4,4,5,4
+148,Frontend Fighters,UT Austin,Web Development,4,4,5,4,5
+149,App Pioneers,University of Florida,Mobile Development,5,5,4,4,4
+150,Logic Lords II,CMU,Artificial Intelligence,5,4,5,4,5
+151,Hack Hawks II,Michigan State,Cybersecurity,4,5,4,4,5
+152,Pixel Protectors,UConn,Web Development,5,4,4,5,4
+153,Mobile Masters,University of Arizona,Mobile Development,4,5,5,4,5
+154,AI Avengers,Stanford,Artificial Intelligence,5,4,4,5,4
+155,Cyber Crusaders,MIT,Cybersecurity,4,5,4,4,5
+156,Web Wonders,Brown,Web Development,5,5,4,4,5
+157,App Aces,Rice,Mobile Development,4,4,5,4,5
+158,Neural Ninjas,CMU,Artificial Intelligence,5,5,4,5,4
+159,Network Nomads,Virginia Tech,Cybersecurity,4,4,5,5,4
+160,UI Utopians,University of Michigan,Web Development,5,4,4,5,4
+161,Mobile Mavens,University of Washington,Mobile Development,4,5,4,5,4
+162,Deep Developers,UC San Diego,Artificial Intelligence,5,5,4,4,5
+163,Security Spartans,Johns Hopkins,Cybersecurity,4,5,5,4,4
+164,Script Storm,UCLA,Web Development,5,4,5,4,4
+165,App Aegis,Ohio State,Mobile Development,4,5,4,5,5

@@ -1,0 +1,100 @@
+================================================================================
+HACKATHON MANAGEMENT SYSTEM - FINAL REPORT
+================================================================================
+
+================================================================================
+HACKATHON TEAMS - FULL DETAILS
+================================================================================
+
+Team ID 101, name Cyber Titans
+Cyber Titans from MIT is competing in the Cybersecurity category
+Scores: [3, 4, 3, 4, 4], Overall Score: 3.75
+--------------------------------------------------------------------------------
+Team ID 102, name AI Innovators
+AI Innovators from Stanford is competing in the Artificial Intelligence category
+Scores: [5, 4, 5, 4, 3], Overall Score: 4.29
+--------------------------------------------------------------------------------
+Team ID 103, name Web Warriors
+Web Warriors from Harvard is competing in the Web Development category
+Scores: [4, 3, 4, 5, 4], Overall Score: 4.00
+--------------------------------------------------------------------------------
+Team ID 104, name Code Breakers
+Code Breakers from Berkeley is competing in the Cybersecurity category
+Scores: [4, 4, 3, 5, 4], Overall Score: 4.25
+--------------------------------------------------------------------------------
+Team ID 105, name Neural Nets
+Neural Nets from CMU is competing in the Artificial Intelligence category
+Scores: [5, 5, 4, 4, 5], Overall Score: 4.50
+--------------------------------------------------------------------------------
+Team ID 106, name Design Masters
+Design Masters from Yale is competing in the Web Development category
+Scores: [3, 4, 4, 3, 5], Overall Score: 3.67
+--------------------------------------------------------------------------------
+Team ID 107, name Security Squad
+Security Squad from Princeton is competing in the Cybersecurity category
+Scores: [4, 5, 4, 4, 3], Overall Score: 4.25
+--------------------------------------------------------------------------------
+Team ID 108, name Data Wizards
+Data Wizards from Columbia is competing in the Artificial Intelligence category
+Scores: [4, 4, 5, 5, 4], Overall Score: 4.50
+--------------------------------------------------------------------------------
+Team ID 109, name Frontend Force
+Frontend Force from Cornell is competing in the Web Development category
+Scores: [5, 4, 4, 3, 4], Overall Score: 4.00
+--------------------------------------------------------------------------------
+Team ID 110, name Tech Titans
+Tech Titans from Duke is competing in the Mobile Development category
+Scores: [4, 5, 5, 4, 4], Overall Score: 4.40
+--------------------------------------------------------------------------------
+Team ID 111, name Hack Heroes
+Hack Heroes from Northwestern is competing in the Cybersecurity category
+Scores: [3, 3, 4, 4, 5], Overall Score: 4.00
+--------------------------------------------------------------------------------
+Team ID 112, name Innovation Hub
+Innovation Hub from Brown is competing in the Artificial Intelligence category
+Scores: [4, 5, 4, 5, 5], Overall Score: 4.57
+--------------------------------------------------------------------------------
+Team ID 113, name Pixel Perfect
+Pixel Perfect from Dartmouth is competing in the Web Development category
+Scores: [5, 5, 3, 4, 4], Overall Score: 4.33
+--------------------------------------------------------------------------------
+Team ID 114, name App Architects
+App Architects from Rice is competing in the Artificial Intelligence category
+Scores: [3, 4, 4, 5, 4], Overall Score: 4.07
+--------------------------------------------------------------------------------
+Team ID 115, name Binary Blazers
+Binary Blazers from Vanderbilt is competing in the Cybersecurity category
+Scores: [5, 4, 4, 4, 5], Overall Score: 4.50
+--------------------------------------------------------------------------------
+
+HIGHEST SCORING TEAM:
+Team ID 112, name Innovation Hub
+Innovation Hub from Brown is competing in the Artificial Intelligence category
+Scores: [4, 5, 4, 5, 5], Overall Score: 4.57
+
+SUMMARY STATISTICS:
+--------------------------------------------------------------------------------
+Total Teams: 15
+Average Overall Score: 4.21
+Minimum Overall Score: 3.67
+Maximum Overall Score: 4.57
+
+TEAMS BY CATEGORY:
+--------------------------------------------------------------------------------
+Mobile Development: 1 teams
+Artificial Intelligence: 5 teams
+Cybersecurity: 5 teams
+Web Development: 4 teams
+
+INDIVIDUAL SCORE FREQUENCY:
+--------------------------------------------------------------------------------
+Score 0: 0 times
+Score 1: 0 times
+Score 2: 0 times
+Score 3: 13 times
+Score 4: 39 times
+Score 5: 23 times
+
+================================================================================
+END OF REPORT
+================================================================================
