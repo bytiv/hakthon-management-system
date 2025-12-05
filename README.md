@@ -2,6 +2,9 @@
 
 ## Quick Start Guide
 
+**Student:** Nikita Devi Gurumayum  
+**Student ID:** SCSJ2400109
+
 ### STEP 1: Extract All Files
 Ensure all Java files are in the same directory:
 
