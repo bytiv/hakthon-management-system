@@ -1,0 +1,479 @@
+================================================================================
+HACKATHON MANAGEMENT SYSTEM - CLASS DIAGRAM DOCUMENTATION
+================================================================================
+
+INHERITANCE HIERARCHY
+================================================================================
+
+                                Team (Abstract)
+                                     |
+                 +-------------------+-------------------+
+                 |                   |                   |
+         CybersecurityTeam      AITeam          WebDevTeam
+                 |
+           MobileAppTeam
+
+
+DETAILED CLASS SPECIFICATIONS
+================================================================================
+
+CLASS: Team (Abstract Base Class)
+--------------------------------------------------------------------------------
+Attributes:
+- teamNumber: int
+- teamName: String
+- universityName: String
+- category: String
+- scores: int[]
+
+Methods:
++ Team(teamNumber, teamName, universityName, category, scores)
++ getTeamNumber(): int
++ setTeamNumber(teamNumber: int): void
++ getTeamName(): String
++ setTeamName(teamName: String): void
++ getUniversityName(): String
++ setUniversityName(universityName: String): void
++ getCategory(): String
++ setCategory(category: String): void
++ getScoreArray(): int[]
++ setScores(scores: int[]): void
++ getOverallScore(): double {abstract}
++ getFullDetails(): String
++ getShortDetails(): String
+- getInitials(name: String): String
++ toString(): String
+
+CLASS: CybersecurityTeam (extends Team)
+--------------------------------------------------------------------------------
+Attributes:
+- (inherits all from Team)
+
+Methods:
++ CybersecurityTeam(teamNumber, teamName, universityName, scores)
++ getOverallScore(): double {override}
+  // Algorithm: Average of top 4 scores
+
+CLASS: AITeam (extends Team)
+--------------------------------------------------------------------------------
+Attributes:
+- (inherits all from Team)
+
+Methods:
++ AITeam(teamNumber, teamName, universityName, scores)
++ getOverallScore(): double {override}
+  // Algorithm: Weighted average [1.0, 1.5, 2.0, 1.5, 1.0]
+
+CLASS: WebDevTeam (extends Team)
+--------------------------------------------------------------------------------
+Attributes:
+- (inherits all from Team)
+
+Methods:
++ WebDevTeam(teamNumber, teamName, universityName, scores)
++ getOverallScore(): double {override}
+  // Algorithm: Average excluding highest and lowest
+
+CLASS: MobileAppTeam (extends Team)
+--------------------------------------------------------------------------------
+Attributes:
+- (inherits all from Team)
+
+Methods:
++ MobileAppTeam(teamNumber, teamName, universityName, scores)
++ getOverallScore(): double {override}
+  // Algorithm: Simple average
+
+CLASS: TeamList
+--------------------------------------------------------------------------------
+Attributes:
+- teams: ArrayList<Team>
+
+Methods:
++ TeamList()
++ addTeam(team: Team): void
++ getAllTeams(): ArrayList<Team>
++ findTeamByNumber(teamNumber: int): Team
++ removeTeam(teamNumber: int): boolean
++ getHighestScoringTeam(): Team
++ getAverageOverallScore(): double
++ getMinimumOverallScore(): double
++ getMaximumOverallScore(): double
++ getScoreFrequency(): Map<Integer, Integer>
++ getTeamsByCategory(category: String): ArrayList<Team>
++ getCategoryCount(): Map<String, Integer>
++ getFullDetailsTable(): String
++ generateReport(): String
++ size(): int
+
+CLASS: FileManager
+--------------------------------------------------------------------------------
+Static Methods:
++ readTeamsFromCSV(filename: String): TeamList
+- parseTeamLine(line: String): Team
++ writeReportToFile(filename: String, report: String): boolean
++ writeTeamsToCSV(filename: String, teamList: TeamList): boolean
++ createSampleCSVFile(filename: String): void
+
+MVC PATTERN CLASSES
+================================================================================
+
+CLASS: HackathonModel (Model)
+--------------------------------------------------------------------------------
+Attributes:
+- teamList: TeamList
+- judges: List<Judge>
+- categories: List<Category>
+- users: List<User>
+- currentUser: User
+
+Methods:
++ HackathonModel()
+- initializeCategories(): void
+- initializeUsers(): void
+- initializeJudges(): void
++ login(username: String, password: String): boolean
++ logout(): void
++ getCurrentUser(): User
++ isLoggedIn(): boolean
++ getTeamList(): TeamList
++ setTeamList(teamList: TeamList): void
++ addTeam(team: Team): void
++ removeTeam(teamNumber: int): boolean
++ findTeam(teamNumber: int): Team
++ getAllTeams(): ArrayList<Team>
++ getTeamsByCategory(category: String): ArrayList<Team>
++ getJudges(): List<Judge>
++ addJudge(judge: Judge): void
++ findJudge(judgeId: int): Judge
++ getCategories(): List<Category>
++ addCategory(category: Category): void
++ findCategory(categoryName: String): Category
++ loadTeamsFromFile(filename: String): void
++ saveTeamsToFile(filename: String): boolean
++ saveReportToFile(filename: String): boolean
++ getStatisticsSummary(): String
+
+CLASS: HackathonMainView (View)
+--------------------------------------------------------------------------------
+Attributes:
+- controller: HackathonController
+- tabbedPane: JTabbedPane
+- teamsTable: JTable
+- tableModel: DefaultTableModel
+- categoryFilter: JComboBox<String>
+- sortBy: JComboBox<String>
+- refreshButton: JButton
+- searchField: JTextField
+- searchButton: JButton
+- searchResultArea: JTextArea
+- teamNumberField: JTextField
+- teamNameField: JTextField
+- universityField: JTextField
+- categoryCombo: JComboBox<String>
+- scoreFields: JTextField[]
+- loadButton: JButton
+- saveButton: JButton
+- deleteButton: JButton
+- overallScoreLabel: JLabel
+- statsArea: JTextArea
+- generateReportButton: JButton
+
+Methods:
++ HackathonMainView(controller: HackathonController)
+- initializeGUI(): void
+- createViewTeamsPanel(): JPanel
+- createSearchPanel(): JPanel
+- createEditPanel(): JPanel
+- createStatsPanel(): JPanel
++ refreshTeamsTable(): void
++ updateTeamsTable(data: Object[][]): void
+- searchTeam(): void
++ displaySearchResult(result: String): void
+- loadTeamForEdit(): void
++ populateEditForm(team: Team): void
+- updateOverallScore(): void
+- createTempTeam(category: String, scores: int[]): Team
+- saveTeamChanges(): void
+- deleteTeam(): void
+- clearEditForm(): void
++ refreshStatistics(): void
++ updateStatistics(stats: String): void
+- generateReport(): void
+- handleClose(): void
++ getSelectedCategory(): String
++ getSelectedSortOption(): String
+
+CLASS: HackathonController (Controller)
+--------------------------------------------------------------------------------
+Attributes:
+- model: HackathonModel
+- view: HackathonMainView
+- DEFAULT_CSV_FILE: String = "HackathonTeams.csv"
+- REPORT_FILE: String = "HackathonReport.txt"
+
+Methods:
++ HackathonController(model: HackathonModel)
++ setView(view: HackathonMainView): void
++ initialize(): void
++ refreshTeamsTable(): void
+- sortTeams(teams: ArrayList<Team>, sortOption: String): void
++ searchTeam(teamNumber: int): void
++ loadTeamForEdit(teamNumber: int): void
++ saveTeamChanges(teamNumber, teamName, university, category, scores): void
++ deleteTeam(teamNumber: int): boolean
++ refreshStatistics(): void
+- generateStatisticsText(): String
++ generateReport(): void
++ handleClose(): void
+
+SUPPORTING CLASSES
+================================================================================
+
+CLASS: Category
+--------------------------------------------------------------------------------
+Attributes:
+- categoryId: int
+- categoryName: String
+- description: String
+
+Methods:
++ Category(categoryId, categoryName, description)
++ getCategoryId(): int
++ getCategoryName(): String
++ getDescription(): String
++ updateDescription(description: String): void
++ toString(): String
+
+CLASS: TeamMember
+--------------------------------------------------------------------------------
+Attributes:
+- memberName: String
+- email: String
+- studentId: String
+
+Methods:
++ TeamMember(memberName, email, studentId)
++ getMemberName(): String
++ getEmail(): String
++ getStudentId(): String
++ updateContactDetails(email: String): void
++ toString(): String
+
+CLASS: Judge
+--------------------------------------------------------------------------------
+Attributes:
+- judgeId: int
+- firstName: String
+- lastName: String
+- email: String
+- assignedCategories: List<Category>
+
+Methods:
++ Judge(judgeId, firstName, lastName, email)
++ getJudgeId(): int
++ getFirstName(): String
++ getLastName(): String
++ getFullName(): String
++ getEmail(): String
++ getAssignedCategories(): List<Category>
++ assignCategory(category: Category): void
++ canJudgeTeam(team: Team): boolean
++ toString(): String
+
+CLASS: Score
+--------------------------------------------------------------------------------
+Attributes:
+- scoreId: int
+- creativity: int
+- technicalImplementation: int
+- teamwork: int
+- presentation: int
+- overallScore: double
+- judge: Judge
+- team: Team
+
+Methods:
++ Score(scoreId, judge, team)
++ setScores(creativity, technical, teamwork, presentation): void
++ calculateOverall(): double
++ getScoreId(): int
++ getCreativity(): int
++ getTechnicalImplementation(): int
++ getTeamwork(): int
++ getPresentation(): int
++ getOverallScore(): double
++ getJudge(): Judge
++ getTeam(): Team
++ validateScores(): boolean
++ toString(): String
+
+CLASS: User
+--------------------------------------------------------------------------------
+Attributes:
+- username: String
+- password: String
+- role: String  // "ADMIN", "JUDGE", "PARTICIPANT", "PUBLIC"
+
+Methods:
++ User(username, password, role)
++ getUsername(): String
++ getPassword(): String
++ getRole(): String
++ authenticate(password: String): boolean
++ toString(): String
+
+MAIN APPLICATION CLASSES
+================================================================================
+
+CLASS: HackathonManagementSystem (Main GUI Entry Point)
+--------------------------------------------------------------------------------
+Methods:
++ main(args: String[]): void
+  // Creates MVC components and launches GUI
+
+CLASS: HackathonManager (Console Entry Point)
+--------------------------------------------------------------------------------
+Attributes:
+- teamList: TeamList
+- scanner: Scanner
+- CSV_FILE: String
+- REPORT_FILE: String
+
+Methods:
++ HackathonManager()
++ main(args: String[]): void
++ run(): void
+- displayMenu(): void
+- loadTeamsFromFile(): void
+- displayAllTeams(): void
+- searchTeam(): void
+- displayHighestScoringTeam(): void
+- displayStatistics(): void
+- generateReport(): void
+- addNewTeam(): void
+- editTeam(): void
+- deleteTeam(): void
+- saveTeamsToFile(): void
+- createTeam(teamNumber, teamName, university, category, scores): Team
+- getIntInput(prompt: String): int
+- getScoreInput(prompt: String): int
+
+RELATIONSHIPS
+================================================================================
+
+1. INHERITANCE
+   Team <|-- CybersecurityTeam
+   Team <|-- AITeam
+   Team <|-- WebDevTeam
+   Team <|-- MobileAppTeam
+
+2. COMPOSITION
+   TeamList *-- Team (contains many)
+   HackathonModel *-- TeamList (has-a)
+   HackathonModel *-- Judge (contains many)
+   HackathonModel *-- Category (contains many)
+   HackathonModel *-- User (contains many)
+   Judge *-- Category (assigned categories)
+   Score --> Team (references)
+   Score --> Judge (references)
+
+3. ASSOCIATION
+   HackathonController --> HackathonModel (uses)
+   HackathonController --> HackathonMainView (uses)
+   HackathonMainView --> HackathonController (references)
+   FileManager ..> TeamList (creates)
+   FileManager ..> Team (creates)
+
+4. DEPENDENCY
+   HackathonController ..> FileManager (uses static methods)
+   TeamList ..> Team (operates on)
+
+MVC PATTERN RELATIONSHIPS
+================================================================================
+
+Model (Data & Business Logic):
+- HackathonModel
+- TeamList
+- Team and subclasses
+- FileManager
+
+View (User Interface):
+- HackathonMainView (GUI)
+- HackathonManager (Console)
+
+Controller (Mediator):
+- HackathonController
+
+Flow:
+User Input → View → Controller → Model → Controller → View → Display
+
+THREE-TIER ARCHITECTURE
+================================================================================
+
+PRESENTATION TIER:
+- HackathonMainView (GUI panels and components)
+- HackathonManager (Console interface)
+
+LOGIC TIER:
+- HackathonController (MVC Controller)
+- HackathonModel (Business logic)
+- TeamList (Collection operations)
+
+DATA TIER:
+- FileManager (File I/O operations)
+- Team classes (Data entities)
+- Supporting classes (Category, Judge, Score, etc.)
+
+KEY DESIGN PATTERNS
+================================================================================
+
+1. MODEL-VIEW-CONTROLLER (MVC)
+   - Separates concerns
+   - Model manages data
+   - View handles UI
+   - Controller coordinates
+
+2. INHERITANCE
+   - Team base class
+   - Category-specific subclasses
+   - Polymorphic behavior
+
+3. SINGLETON (Implied)
+   - FileManager uses static methods
+   - Central point for file operations
+
+4. FACADE
+   - TeamList provides simplified interface to team operations
+   - HackathonController facades complex interactions
+
+5. FACTORY METHOD
+   - FileManager.parseTeamLine() creates appropriate team type
+   - Controller.createTeam() based on category
+
+SCALABILITY CONSIDERATIONS
+================================================================================
+
+1. New Team Categories:
+   - Create new subclass extending Team
+   - Implement getOverallScore()
+   - Update FileManager parsing logic
+
+2. New Features:
+   - Add methods to Model
+   - Create new View panels
+   - Add Controller handlers
+
+3. Database Integration:
+   - Replace FileManager with DatabaseManager
+   - Implement same interface
+   - No changes to other classes needed
+
+4. Web Interface:
+   - Keep Model and Controller
+   - Replace View with web framework
+   - RESTful API possible
+
+================================================================================
+END OF CLASS DIAGRAM DOCUMENTATION
+================================================================================
